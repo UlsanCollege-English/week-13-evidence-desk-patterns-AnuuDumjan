@@ -1,54 +1,14 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/cm6PS4yt)
 # Week 1 Homework: Evidence Desk Patterns
-
 ## Student Name
 
-Write your name here.
+Anu Dumjan
 
 ## Summary
 
-Write 3–6 lines describing what this homework asks you to practice.
+This homework asks us to practice several important data structure patterns that are commonly used in Python programming. The assignment focuses on counting frequencies with dictionaries, detecting duplicates using sets, validating matching tags with stacks, and performing efficient lookups with dictionaries. These patterns demonstrate how different data structures can be selected to solve different types of problems effectively.
 
-Example topics:
-
-- frequency counting with dictionaries
-- duplicate detection with sets
-- stack matching with lists
-- lookup tables with dictionaries
-
-## How to Run Tests
-
-From the repository root, run:
-
-```bash
-pytest -q
-```
-
-To run one test file:
-
-```bash
-pytest -q tests/test_challenges.py
-```
-
-## Required Problems
-
-Complete these functions in `src/challenges.py`:
-
-1. `count_evidence`
-2. `first_repeated_id`
-3. `valid_tags`
-4. `lookup_alias`
-
-## Optional Challenges
-
-These are extra practice unless your instructor tells you otherwise:
-
-1. `process_reports`
-2. `largest_time_gap`
-
-Optional tests are skipped by default. To run them, remove the `@pytest.mark.skip(...)` line above the optional test you want to check.
-
----
+Through these exercises, I learned how dictionaries can be used to organize and count data, how sets provide a fast way to detect repeated values, and how stacks can be used to validate nested structures. I also practiced using dictionaries as lookup tables to quickly retrieve information. Overall, this homework strengthened my understanding of basic data structures and improved my ability to choose appropriate solutions for data-processing tasks.
 
 # Problem Notes
 
@@ -56,31 +16,35 @@ Optional tests are skipped by default. To run them, remove the `@pytest.mark.ski
 
 ### Pattern
 
-Write the pattern name here.
+Frequency Counting
 
 ### Data Structure
 
-Write the data structure here.
+Dictionary
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty dictionary to store counts for each evidence label.
+* Step 2: Iterate through every item in the evidence list.
+* Step 3: If the label already exists in the dictionary, increase its count.
+* Step 4: If the label does not exist, add it with a starting count of one.
+* Step 5: Return the completed dictionary after processing all items.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+The algorithm visits each evidence label exactly once. A dictionary is used because it allows fast updates and retrieval of counts. The amount of memory used depends on the number of unique evidence labels.
+
 ### Edge Cases Checked
 
-- [ ] Empty list
-- [ ] One item
-- [ ] Repeated items
-- [ ] Different labels
+* [x] Empty list
+* [x] One item
+* [x] Repeated items
+* [x] Different labels
 
 ---
 
@@ -88,31 +52,36 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Duplicate Detection
 
 ### Data Structure
 
-Write the data structure here.
+Set
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty set to track IDs that have already been seen.
+* Step 2: Iterate through the list of suspect IDs.
+* Step 3: Check whether the current ID already exists in the set.
+* Step 4: If it exists, return that ID as the first repeated value.
+* Step 5: Otherwise, add the ID to the set and continue.
+* Step 6: Return the appropriate value if no duplicates are found.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+A set provides very fast membership checking. This allows duplicate IDs to be detected efficiently without needing nested loops that would increase runtime.
+
 ### Edge Cases Checked
 
-- [ ] Empty list
-- [ ] No repeated IDs
-- [ ] First two IDs match
-- [ ] Multiple repeated IDs
+* [x] Empty list
+* [x] No repeated IDs
+* [x] First two IDs match
+* [x] Multiple repeated IDs
 
 ---
 
@@ -120,33 +89,39 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Stack Matching
 
 ### Data Structure
 
-Write the data structure here.
+List used as a Stack
 
 ### Approach
 
-- Step 1:
-- Step 2:
-- Step 3:
+* Step 1: Create an empty stack.
+* Step 2: Scan the string one character at a time.
+* Step 3: Push opening tags or brackets onto the stack.
+* Step 4: When a closing tag appears, check whether it matches the most recent opening tag.
+* Step 5: Remove matched opening tags from the stack.
+* Step 6: Continue until all characters are processed.
+* Step 7: Return true only if every tag matches correctly and the stack is empty.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(n)`
+* Space: `O(n)`
 
 Explain briefly:
 
+The stack follows a Last-In, First-Out structure, making it ideal for matching nested tags. Every character is processed once, resulting in linear runtime.
+
 ### Edge Cases Checked
 
-- [ ] Empty string
-- [ ] Correctly nested tags
-- [ ] Mismatched tags
-- [ ] Closing tag before opening tag
-- [ ] Unclosed opening tag
-- [ ] Non-bracket characters
+* [x] Empty string
+* [x] Correctly nested tags
+* [x] Mismatched tags
+* [x] Closing tag before opening tag
+* [x] Unclosed opening tag
+* [x] Non-bracket characters
 
 ---
 
@@ -154,47 +129,49 @@ Explain briefly:
 
 ### Pattern
 
-Write the pattern name here.
+Lookup Table
 
 ### Data Structure
 
-Write the data structure here.
+Dictionary
 
 ### Approach
 
-- Step 1:
-- Step 2:
+* Step 1: Store aliases and corresponding values in a dictionary.
+* Step 2: Receive the alias being searched for.
+* Step 3: Check whether the alias exists in the dictionary.
+* Step 4: Return the associated value if found.
+* Step 5: Return the default result if the alias does not exist.
 
 ### Complexity
 
-- Time: `O(?)`
-- Space: `O(?)`
+* Time: `O(1)`
+* Space: `O(n)`
 
 Explain briefly:
 
+Dictionaries support constant-time average lookups, making them one of the most efficient structures for searching and retrieving stored information.
+
 ### Edge Cases Checked
 
-- [ ] Known alias
-- [ ] Unknown alias
-- [ ] Empty dictionary
-
----
+* [x] Known alias
+* [x] Unknown alias
+* [x] Empty dictionary
 
 # Assistance & Sources
 
 ## AI Used?
 
-- [ ] Yes
-- [ ] No
+* [x] Yes
+* [ ] No
 
 ## If yes, what did AI help with?
 
-Write 1–3 bullets.
-
--
--
--
+* Reviewed the logic used for each function.
+* Explained how dictionaries, sets, and stacks solve different types of problems.
+* Helped verify test cases and improve README documentation.
 
 ## Other Sources
 
-List any non-course sources you used. If none, write `None`.
+None
+
